@@ -1,0 +1,163 @@
+:root {
+    --primary: #7904d3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+.background {
+    background-image: url(background.png);
+    min-height: 100vh;        /* ← min-height instead of height */
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    padding: 20px;            /* ← prevents box from touching edges */
+}
+
+.box {
+    background-color: rgba(240, 255, 255, 0.5);
+    border-color: #fcddec;
+    border-radius: 20px;
+    border-style: solid;
+    box-shadow: 0px 19px 41px rgba(0, 0, 0, 0.36);
+    height: auto;             /* ← never use fixed height */
+    width: 90%;
+    max-width: 600px;         /* ← limits width on large screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 30px;     
+}
+
+.box h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    color: #ad3bcd;
+    line-height: 48px;
+    text-align: center;       /* ← center on all screens */
+}
+
+.box h3 {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 36px; 
+    text-align: center;  
+    word-break: break-word;
+}
+
+#questionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#answerInput {
+    background: transparent;
+    border: 2px solid rgb(35, 34, 34);
+    border-radius: 4px;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;              /* ← make sure it fills form */
+}
+
+.primary-btn {
+    height: 46px;
+    background-color: #b33fd3;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    width: 100%;          
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: #7904d3;
+    transform: scale(1.05);
+}
+
+.score-effect {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.correct {
+    color: green;
+    animation: floatUp 1s ease forwards;
+}
+
+.wrong {
+    color: red;
+    animation: floatDown 1s ease forwards;
+}
+
+@keyframes floatUp {
+    0%   { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-50px); }
+}
+
+@keyframes floatDown {
+    0%   { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(50px); }
+}
+
+/* Tablet */
+@media (max-width: 786px) {
+    .box h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .box h3 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    #answerInput {
+        font-size: 16px;
+        height: 36px;
+    }
+    .primary-btn {
+        font-size: 18px;
+        height: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .box {
+        padding: 30px 20px;
+    }
+    .box h2 {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .box h3 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .primary-btn {
+        font-size: 16px;
+        height: 38px;
+    }
+}
