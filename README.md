@@ -22,4 +22,4 @@ A fun and interactive Math Quiz web app built with HTML, CSS, and JavaScript.
 5. -2 points for wrong answer ❌
 
 ## Live Demo
-[Click here to play](https://your-vercel-link.vercel.app)
+[Click here to play](math-quiz-rust.vercel.app)
